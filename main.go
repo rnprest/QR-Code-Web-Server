@@ -19,7 +19,6 @@ func main() {
 	flag.Parse()
 	http.Handle("/", http.HandlerFunc(QR))
 	url := fmt.Sprintf("http://localhost%v", *addr)
-	log.Printf("url = %#v", url)
 	openBrowser(url)
 	err := http.ListenAndServe(*addr, nil)
 	if err != nil {
